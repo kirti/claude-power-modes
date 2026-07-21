@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "description": "Machine-readable version of the power-user prompt modes for Claude and Claude Code.",
+  "modes": [
+    {
+      "name": "SYSTEMSMODE",
+      "description": "Think like a systems architect",
+      "prompt": "Analyze this as a systems architect. Map out components, data flow, dependencies, and failure points before proposing changes. Call out coupling, single points of failure, and where the design trades simplicity for flexibility."
+    },
+    {
+      "name": "STAFFENGINEER",
+      "description": "Review code as a senior engineer",
+      "prompt": "Review this code as a staff engineer would in a pull request. Flag design issues before style issues. Call out anything that will cause pain in 6 months, not just what's technically wrong today."
+    },
+    {
+      "name": "PRINCIPALENGINEER",
+      "description": "Focus on scalability and tradeoffs",
+      "prompt": "Evaluate this at the level of a principal engineer setting technical direction. For each major decision, state the tradeoff explicitly — what we gain, what we give up, and under what scale or conditions this choice breaks down."
+    },
+    {
+      "name": "SECURITYMODE",
+      "description": "Find security vulnerabilities",
+      "prompt": "Review this as a security engineer doing a threat-focused audit. Look specifically for injection risks, auth/authz gaps, unsafe deserialization, secrets handling, and input validation gaps. Rank findings by severity and exploitability, not just presence."
+    },
+    {
+      "name": "PERFORMANCEMODE",
+      "description": "Optimize speed and memory",
+      "prompt": "Review this for performance. Identify the actual bottleneck (don't guess — reason from complexity, I/O, or allocation patterns), and propose the smallest change that meaningfully improves speed or memory, not a full rewrite."
+    },
+    {
+      "name": "TESTMODE",
+      "description": "Generate comprehensive tests",
+      "prompt": "Write tests for this covering: happy path, edge cases, invalid input, and failure modes. Prioritize tests that would catch a real regression over tests that just pad coverage numbers."
+    },
+    {
+      "name": "REFMODE",
+      "description": "Refactor for maintainability",
+      "prompt": "Refactor this for maintainability only — no behavior changes. Reduce duplication, clarify naming, and simplify control flow. Explain each change in one line so the diff is easy to review."
+    },
+    {
+      "name": "AGENTMODE",
+      "description": "Break work into autonomous tasks",
+      "prompt": "Break this goal into a sequence of discrete, independently verifiable tasks an agent could execute one at a time. For each task, state its inputs, its output, and how to verify it succeeded before moving to the next."
+    },
+    {
+      "name": "MCPMODE",
+      "description": "Think in terms of Model Context Protocol tools",
+      "prompt": "Think about this in terms of Model Context Protocol tools: what external data or actions would a tool call need to expose, what's the minimal tool surface, and where would a human need to stay in the loop for confirmation."
+    },
+    {
+      "name": "ENTERPRISEMODE",
+      "description": "Consider governance, compliance, monitoring, and scalability",
+      "prompt": "Evaluate this for enterprise readiness: governance (who owns this, how is it audited), compliance implications, observability/monitoring, and how it behaves at 10x and 100x current scale."
+    },
+    {
+      "name": "REVIEWMODE",
+      "description": "Review before producing the final answer",
+      "prompt": "Before giving your final answer, draft it, then critique your own draft as a skeptical reviewer would — check for gaps, unstated assumptions, and weak reasoning. Then give the revised final answer."
+    },
+    {
+      "name": "VERIFYMODE",
+      "description": "Check facts and identify uncertainty",
+      "prompt": "Go through your answer and flag anything you're not fully certain of. Separate what's well-established from what's an inference or best guess, and note where I should double-check independently."
+    },
+    {
+      "name": "DOCSMODE",
+      "description": "Produce high-quality documentation",
+      "prompt": "Write this as documentation a new team member could follow with zero prior context. Include purpose, prerequisites, step-by-step usage, and common pitfalls — not just a description of what the code does."
+    },
+    {
+      "name": "PROMPTENGINEER",
+      "description": "Improve prompts before answering",
+      "prompt": "Before answering, first rewrite my prompt to be clearer and more specific, show me the improved version, then answer using that improved version."
+    }
+  ]
+}
